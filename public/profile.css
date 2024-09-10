@@ -1,0 +1,14 @@
+#last {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.car {
+    width: 15rem;
+    padding-left: 3rem;
+}
+
+#last img {
+    width: 100%;
+}
