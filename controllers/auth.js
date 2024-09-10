@@ -76,13 +76,13 @@ exports.register = async (req, res) => {
     if (results.length > 0) {
       return res
         .status(401)
-        .redirect("/register.html?message=Email already in use");
+        .redirect("/register?message=Email already in use");
     }
 
     if (password !== passwordConfirm) {
       return res
         .status(401)
-        .redirect("/register.html?message=Passwords do not match");
+        .redirect("/register?message=Passwords do not match");
     }
 
     const hashedPassword = await bcrypt.hash(password, 8);
@@ -97,7 +97,7 @@ exports.register = async (req, res) => {
 
     res
       .status(200)
-      .redirect("/register.html?message=User registered successfully");
+      .redirect("/login?message=User registered successfully");
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");
